@@ -1,0 +1,13 @@
+version: "3"
+services:
+  batch:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    environment:
+      - ENVIRONMENT=development
+      - SLACK_API_TOKEN=${SLACK_API_TOKEN}
+      - WEB_USERNAME=${WEB_USERNAME}
+      - WEB_PASSWORD=${WEB_PASSWORD}
+    volumes:
+      - .:/var/task:cached
